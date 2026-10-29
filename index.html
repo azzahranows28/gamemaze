@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101827" />
+    <title>Maze Escape</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-card">
+      <header class="header">
+        <div>
+          <p class="eyebrow">PETUALANGAN MINI</p>
+          <h1>Maze <span>Escape</span></h1>
+          <p class="subtitle">Jelajahi labirin, temukan kunci, lalu kabur!</p>
+        </div>
+        <div class="stats" aria-label="Statistik permainan">
+          <div class="stat"><span>LEVEL</span><strong id="level">1</strong></div>
+          <div class="stat"><span>WAKTU</span><strong id="timer">00:00</strong></div>
+          <div class="stat"><span>LANGKAH</span><strong id="moves">0</strong></div>
+          <div class="stat key-stat"><span>KUNCI</span><strong id="key-status" aria-label="Kunci belum ditemukan">🔒</strong></div>
+        </div>
+      </header>
+
+      <section class="maze-frame" aria-label="Area labirin">
+        <div id="maze" class="maze" role="grid" aria-label="Labirin"></div>
+        <div id="pause-overlay" class="maze-overlay" hidden>
+          <div class="overlay-card">
+            <span class="overlay-icon">⏸️</span>
+            <h2>Permainan Dijeda</h2>
+            <p>Tarik napas, petualang. Labirin menunggumu.</p>
+            <button id="resume" class="next-button" type="button">Lanjut bermain</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="game-footer">
+        <p id="message" class="message" aria-live="polite">Gunakan tombol panah atau WASD untuk bergerak.</p>
+        <div class="footer-actions">
+          <button id="next-level" class="next-button" type="button" hidden>Level berikutnya →</button>
+          <button id="pause" class="restart-button" type="button" aria-pressed="false">⏸ <span>Jeda</span></button>
+          <button id="restart" class="restart-button" type="button">↻ <span>Labirin baru</span></button>
+        </div>
+      </div>
+
+      <nav class="touch-controls" aria-label="Kontrol gerakan">
+        <button type="button" data-direction="up" aria-label="Atas">▲</button>
+        <div class="horizontal-controls">
+          <button type="button" data-direction="left" aria-label="Kiri">◀</button>
+          <button type="button" data-direction="down" aria-label="Bawah">▼</button>
+          <button type="button" data-direction="right" aria-label="Kanan">▶</button>
+        </div>
+      </nav>
+      <p class="legend"><span class="legend-player"></span> Kamu <span class="legend-exit">🚪</span> Pintu keluar</p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
